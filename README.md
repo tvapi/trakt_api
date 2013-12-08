@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/wafcio/trakt_api.png?branch=master)](https://travis-ci.org/wafcio/trakt_api)
+[![Dependency Status](https://gemnasium.com/wafcio/trakt_api.png)](https://gemnasium.com/wafcio/trakt_api)
+[![Code Climate](https://codeclimate.com/github/wafcio/trakt_api.png)](https://codeclimate.com/github/wafcio/trakt_api)
+[![Coverage Status](https://coveralls.io/repos/wafcio/trakt_api/badge.png)](https://coveralls.io/r/wafcio/trakt_api)
+
 # TraktApi
 
 TODO: Write a gem description

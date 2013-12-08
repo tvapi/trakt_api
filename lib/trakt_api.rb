@@ -1,5 +1,4 @@
-require "trakt_api/version"
+module TraktApi; end
 
-module TraktApi
-  # Your code goes here...
-end
+require 'trakt_api/version'
+require 'trakt_api/configuration'

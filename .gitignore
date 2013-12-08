@@ -15,3 +15,5 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+spec/integrations/support/trakt_api.rb
