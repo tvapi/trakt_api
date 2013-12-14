@@ -36,6 +36,10 @@ class TraktApi::Client
     @network ||= TraktApi::Network.new(self)
   end
 
+  def rate
+    @rate ||= TraktApi::Rate.new(self)
+  end
+
   def recommendations
     @recommendations ||= TraktApi::Recommendations.new(self)
   end

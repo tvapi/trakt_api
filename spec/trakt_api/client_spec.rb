@@ -45,6 +45,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.rate' do
+    it 'should return rate class' do
+      model.rate.class.should == TraktApi::Rate
+    end
+  end
+
   describe '.recommendations' do
     it 'should return movies class' do
       model.recommendations.class.should == TraktApi::Recommendations
