@@ -39,6 +39,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.network' do
+    it 'should return network class' do
+      model.network.class.should == TraktApi::Network
+    end
+  end
+
   describe '.recommendations' do
     it 'should return movies class' do
       model.recommendations.class.should == TraktApi::Recommendations
