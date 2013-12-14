@@ -16,6 +16,10 @@ class TraktApi::Client
     @calendar ||= TraktApi::Genres.new(self)
   end
 
+  def movies
+    @movies ||= TraktApi::Movies.new(self)
+  end
+
   def server
     @server ||= TraktApi::Server.new(self)
   end

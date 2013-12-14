@@ -15,6 +15,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.movies' do
+    it 'should return movies class' do
+      model.movies.class.should == TraktApi::Movies
+    end
+  end
+
   describe '.server' do
     it 'should return server class' do
       model.server.class.should == TraktApi::Server
