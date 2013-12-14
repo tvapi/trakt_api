@@ -4,6 +4,20 @@ describe TraktApi::Client do
   let(:client) { TraktApi::Client.new }
 
   describe 'real request' do
+    describe '.account' do
+      describe '.settings' do
+        it 'should return response class' do
+          client.account.settings.class.should == HTTParty::Response
+        end
+      end
+
+      describe '.test' do
+        it 'should return hash' do
+          client.account.test.class.should == HTTParty::Response
+        end
+      end
+    end
+
     describe '.calendar' do
       describe '.premieres' do
         it 'should return response class' do

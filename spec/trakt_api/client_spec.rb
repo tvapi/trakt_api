@@ -3,6 +3,12 @@ require 'spec_helper'
 describe TraktApi::Client do
   let(:model) { TraktApi::Client.new }
 
+  describe '.account' do
+    it 'should return account class' do
+      model.account.class.should == TraktApi::Account
+    end
+  end
+
   describe '.calendar' do
     it 'should return calendar class' do
       model.calendar.class.should == TraktApi::Calendar
