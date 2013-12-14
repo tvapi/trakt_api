@@ -15,6 +15,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.comment' do
+    it 'should return comment class' do
+      model.comment.class.should == TraktApi::Comment
+    end
+  end
+
   describe '.genres' do
     it 'should return genres class' do
       model.genres.class.should == TraktApi::Genres
