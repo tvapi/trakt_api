@@ -39,6 +39,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.movie' do
+    it 'should return movie class' do
+      model.movie.class.should == TraktApi::Movie
+    end
+  end
+
   describe '.movies' do
     it 'should return movies class' do
       model.movies.class.should == TraktApi::Movies

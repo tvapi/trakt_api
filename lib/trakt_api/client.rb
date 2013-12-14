@@ -32,6 +32,10 @@ class TraktApi::Client
     @lists ||= TraktApi::Lists.new(self)
   end
 
+  def movie
+    @movie ||= TraktApi::Movie.new(self)
+  end
+
   def movies
     @movies ||= TraktApi::Movies.new(self)
   end
