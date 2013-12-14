@@ -4,7 +4,7 @@ describe TraktApi::Genres do
   let(:model) { TraktApi::Genres.new(TraktApi::Client.new) }
 
   describe '.movies' do
-    it 'should call new with specific params' do
+    it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with("genres/movies.json/#{TraktApi::Configuration.api_key}").
         and_return(double(response: true))
@@ -14,7 +14,7 @@ describe TraktApi::Genres do
   end
 
   describe '.shows' do
-    it 'should call new with specific params' do
+    it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with("genres/shows.json/#{TraktApi::Configuration.api_key}").
         and_return(double(response: true))

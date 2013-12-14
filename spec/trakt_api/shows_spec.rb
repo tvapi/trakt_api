@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe TraktApi::Movies do
-  let(:model) { TraktApi::Movies.new(TraktApi::Client.new) }
+describe TraktApi::Shows do
+  let(:model) { TraktApi::Shows.new(TraktApi::Client.new) }
 
   describe '.trending' do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("movies/trending.json/#{TraktApi::Configuration.api_key}").
+      model.should_receive(:get).with("shows/trending.json/#{TraktApi::Configuration.api_key}").
         and_return(double(response: true))
 
       model.trending
@@ -18,7 +18,7 @@ describe TraktApi::Movies do
       time = Time.now
 
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("movies/updated.json/#{TraktApi::Configuration.api_key}/#{time.to_i}").
+      model.should_receive(:get).with("shows/updated.json/#{TraktApi::Configuration.api_key}/#{time.to_i}").
         and_return(double(response: true))
 
       model.updated(time: time)

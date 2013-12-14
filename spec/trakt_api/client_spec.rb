@@ -26,4 +26,10 @@ describe TraktApi::Client do
       model.server.class.should == TraktApi::Server
     end
   end
+
+  describe '.shows' do
+    it 'should return shows class' do
+      model.shows.class.should == TraktApi::Shows
+    end
+  end
 end

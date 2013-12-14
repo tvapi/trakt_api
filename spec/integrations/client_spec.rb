@@ -71,5 +71,25 @@ describe TraktApi::Client do
         end
       end
     end
+
+    describe '.shows' do
+      describe '.trending' do
+        it 'should return response class' do
+          client.shows.trending.class.should == HTTParty::Response
+        end
+
+        describe 'with authentication' do
+          it 'should return response class' do
+            client.shows.trending(auth: true).class.should == HTTParty::Response
+          end
+        end
+      end
+
+      describe '.updated' do
+        it 'should return response class' do
+          client.shows.updated(time: Time.now).class.should == HTTParty::Response
+        end
+      end
+    end
   end
 end
