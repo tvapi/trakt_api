@@ -27,6 +27,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.lists' do
+    it 'should return lists class' do
+      model.lists.class.should == TraktApi::Lists
+    end
+  end
+
   describe '.movies' do
     it 'should return movies class' do
       model.movies.class.should == TraktApi::Movies

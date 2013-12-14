@@ -21,7 +21,11 @@ class TraktApi::Client
   end
 
   def genres
-    @calendar ||= TraktApi::Genres.new(self)
+    @genres ||= TraktApi::Genres.new(self)
+  end
+
+  def lists
+    @lists ||= TraktApi::Lists.new(self)
   end
 
   def movies
