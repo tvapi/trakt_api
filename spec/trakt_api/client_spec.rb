@@ -9,6 +9,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.genres' do
+    it 'should return genres class' do
+      model.genres.class.should == TraktApi::Genres
+    end
+  end
+
   describe '.server' do
     it 'should return server class' do
       model.server.class.should == TraktApi::Server

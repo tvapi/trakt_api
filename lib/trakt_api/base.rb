@@ -64,10 +64,6 @@ class TraktApi::Base
     "#{api_key}/series/#{series_id}/"
   end
 
-  def api_url
-    client.api_url
-  end
-
   def api_key
     client.api_key
   end

@@ -30,6 +30,20 @@ describe TraktApi::Client do
       end
     end
 
+    describe '.genres' do
+      describe '.movies' do
+        it 'should return response class' do
+          client.genres.movies.class.should == HTTParty::Response
+        end
+      end
+
+      describe '.shows' do
+        it 'should return response class' do
+          client.genres.shows.class.should == HTTParty::Response
+        end
+      end
+    end
+
     describe '.server' do
       describe '.time' do
         it 'should return response class' do

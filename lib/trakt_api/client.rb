@@ -12,6 +12,10 @@ class TraktApi::Client
     @calendar ||= TraktApi::Calendar.new(self)
   end
 
+  def genres
+    @calendar ||= TraktApi::Genres.new(self)
+  end
+
   def server
     @server ||= TraktApi::Server.new(self)
   end
