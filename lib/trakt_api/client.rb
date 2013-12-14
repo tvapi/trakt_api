@@ -12,6 +12,10 @@ class TraktApi::Client
     @account ||= TraktApi::Account.new(self)
   end
 
+  def activity
+    @activity ||= TraktApi::Activity.new(self)
+  end
+
   def calendar
     @calendar ||= TraktApi::Calendar.new(self)
   end

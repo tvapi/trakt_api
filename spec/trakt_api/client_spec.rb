@@ -9,6 +9,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.activity' do
+    it 'should return account class' do
+      model.activity.class.should == TraktApi::Activity
+    end
+  end
+
   describe '.calendar' do
     it 'should return calendar class' do
       model.calendar.class.should == TraktApi::Calendar
