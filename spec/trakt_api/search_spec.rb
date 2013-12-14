@@ -6,7 +6,7 @@ describe TraktApi::Search do
   describe '.episodes' do
     it 'should call new with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("search/episodes.json/#{TraktApi::Configuration.api_key}?query=test").
+      model.should_receive(:get).with("search/episodes.json/#{TraktApi::Configuration.api_key}", query: 'test').
         and_return(double(response: true))
 
       model.episodes(query: 'test')
@@ -16,7 +16,7 @@ describe TraktApi::Search do
   describe '.movies' do
     it 'should call new with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("search/movies.json/#{TraktApi::Configuration.api_key}?query=test").
+      model.should_receive(:get).with("search/movies.json/#{TraktApi::Configuration.api_key}", query: 'test').
         and_return(double(response: true))
 
       model.movies(query: 'test')
@@ -26,7 +26,7 @@ describe TraktApi::Search do
   describe '.people' do
     it 'should call new with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("search/people.json/#{TraktApi::Configuration.api_key}?query=test").
+      model.should_receive(:get).with("search/people.json/#{TraktApi::Configuration.api_key}", query: 'test').
         and_return(double(response: true))
 
       model.people(query: 'test')
@@ -36,8 +36,7 @@ describe TraktApi::Search do
   describe '.shows' do
     it 'should call new with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).
-        with("search/shows.json/#{TraktApi::Configuration.api_key}?query=test").
+      model.should_receive(:get).with("search/shows.json/#{TraktApi::Configuration.api_key}", query: 'test').
         and_return(double(response: true))
 
       model.shows(query: 'test')
@@ -47,7 +46,7 @@ describe TraktApi::Search do
   describe '.users' do
     it 'should call new with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("search/users.json/#{TraktApi::Configuration.api_key}?query=test").
+      model.should_receive(:get).with("search/users.json/#{TraktApi::Configuration.api_key}", query: 'test').
         and_return(double(response: true))
 
       model.users(query: 'test')

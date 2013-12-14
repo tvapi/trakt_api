@@ -73,13 +73,9 @@ describe TraktApi::Base do
     end
   end
 
-  describe '.query_params' do
-    it 'should return correct string' do
-      model.query_params({ sample: 'test', sample2: 'test2' }, [:sample]).should == '?sample=test'
-    end
-
-    it 'should return correct string other case' do
-      model.query_params({}, []).should == ''
+  describe '.prepare_uri' do
+    it 'should return correct uri' do
+      model.prepare_uri('URI', {}, []).should == "URI/"
     end
   end
 
