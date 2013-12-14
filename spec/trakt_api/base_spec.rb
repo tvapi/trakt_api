@@ -73,6 +73,16 @@ describe TraktApi::Base do
     end
   end
 
+  describe '.query_params' do
+    it 'should return correct string' do
+      model.query_params({ sample: 'test', sample2: 'test2' }, [:sample]).should == '?sample=test'
+    end
+
+    it 'should return correct string other case' do
+      model.query_params({}, []).should == ''
+    end
+  end
+
   describe '.response' do
     it 'should call get klass method' do
       model.instance_variable_set('@method', :get)

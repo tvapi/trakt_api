@@ -51,6 +51,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.search' do
+    it 'should return search class' do
+      model.search.class.should == TraktApi::Search
+    end
+  end
+
   describe '.server' do
     it 'should return server class' do
       model.server.class.should == TraktApi::Server

@@ -43,6 +43,11 @@ class TraktApi::Base
     self
   end
 
+  def query_params(options, fields)
+    query_params = fields.map { |key| options[key] ? "#{key}=#{options[key]}" : nil }.compact.join('&')
+    query_params.empty? ? query_params : "?#{query_params}"
+  end
+
   def response
     self.class.send(@method, uri, request_options(options))
   end

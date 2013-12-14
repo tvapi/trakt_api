@@ -40,6 +40,10 @@ class TraktApi::Client
     @recommendations ||= TraktApi::Recommendations.new(self)
   end
 
+  def search
+    @search ||= TraktApi::Search.new(self)
+  end
+
   def server
     @server ||= TraktApi::Server.new(self)
   end

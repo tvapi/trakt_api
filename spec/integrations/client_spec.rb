@@ -109,6 +109,38 @@ describe TraktApi::Client do
         end
       end
     end
+    
+    describe '.search' do
+      describe '.episodes' do
+        it 'should return response class' do
+          client.search.episodes('test').class.should == HTTParty::Response
+        end
+      end
+
+      describe '.movies' do
+        it 'should return response class' do
+          client.search.movies('test').class.should == HTTParty::Response
+        end
+      end
+
+      describe '.people' do
+        it 'should return response class' do
+          client.search.people('test').class.should == HTTParty::Response
+        end
+      end
+
+      describe '.shows' do
+        it 'should return response class' do
+          client.search.shows('test').class.should == HTTParty::Response
+        end
+      end
+
+      describe '.users' do
+        it 'should return response class' do
+          client.search.users('test').class.should == HTTParty::Response
+        end
+      end
+    end
 
     describe '.server' do
       describe '.time' do
