@@ -15,6 +15,14 @@ describe TraktApi::Base do
     end
   end
 
+  describe '.optionl_auth' do
+    it 'should call auth' do
+      model.should_receive(:auth)
+
+      model.optional_auth(auth: true)
+    end
+  end
+
   describe '.store_uri_and_options' do
     it 'should set uri' do
       model.store_uri_and_options('http://example.com', {})

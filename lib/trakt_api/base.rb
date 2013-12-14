@@ -18,6 +18,12 @@ class TraktApi::Base
     self
   end
 
+  def optional_auth(options)
+    auth if options[:auth]
+
+    self
+  end
+
   def store_uri_and_options(uri, options)
     @uri = uri
     @options = options
