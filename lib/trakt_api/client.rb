@@ -28,6 +28,10 @@ class TraktApi::Client
     @movies ||= TraktApi::Movies.new(self)
   end
 
+  def recommendations
+    @recommendations ||= TraktApi::Recommendations.new(self)
+  end
+
   def server
     @server ||= TraktApi::Server.new(self)
   end
