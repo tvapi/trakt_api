@@ -81,6 +81,12 @@ describe TraktApi::Client do
     end
   end
 
+  describe '.show' do
+    it 'should return show class' do
+      model.show.class.should == TraktApi::Show
+    end
+  end
+
   describe '.shows' do
     it 'should return shows class' do
       model.shows.class.should == TraktApi::Shows

@@ -60,6 +60,10 @@ class TraktApi::Client
     @server ||= TraktApi::Server.new(self)
   end
 
+  def show
+    @server ||= TraktApi::Show.new(self)
+  end
+
   def shows
     @shows ||= TraktApi::Shows.new(self)
   end
