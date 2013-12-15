@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = TraktApi::VERSION
   spec.authors       = ['Krzysztof Wawer']
   spec.email         = ['krzysztof.wawer@gmail.com']
-  spec.description   = %q{Ruby client for accessing TV shows information from the trakt.tv API}
+  spec.description   = %q{Ruby client for trakt.tv API}
   spec.summary       = %q{Ruby client for trakt.tv API}
   spec.homepage      = %q{http://github.com/wafcio/trakt_api}
   spec.license       = 'MIT'
