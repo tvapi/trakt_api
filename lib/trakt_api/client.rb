@@ -67,4 +67,8 @@ class TraktApi::Client
   def shows
     @shows ||= TraktApi::Shows.new(self)
   end
+
+  def user
+    @user ||= TraktApi::User.new(self)
+  end
 end

@@ -92,4 +92,10 @@ describe TraktApi::Client do
       model.shows.class.should == TraktApi::Shows
     end
   end
+
+  describe '.user' do
+    it 'should return user class' do
+      model.user.class.should == TraktApi::User
+    end
+  end
 end
