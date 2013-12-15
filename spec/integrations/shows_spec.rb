@@ -18,7 +18,7 @@ describe TraktApi::Shows do
 
     describe '.updated' do
       it 'should return response class' do
-        model.updated(time: Time.now).class.should == HTTParty::Response
+        model.updated(time: Time.now.strftime("%Y%d%m")).class.should == HTTParty::Response
       end
     end
   end

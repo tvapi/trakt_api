@@ -5,11 +5,11 @@ class TraktApi::Base
   include HTTParty
   base_uri 'http://api.trakt.tv//'
 
-  attr_reader :client, :uri, :options
-
   def initialize(client)
     @client = client
+
     @auth = false
+    @params = {}
   end
 
   def auth
@@ -24,39 +24,46 @@ class TraktApi::Base
     self
   end
 
-  def store_uri_and_options(uri, options)
-    @uri = uri
-    @options = options
+  def store_uri(uri)
+    @uri = "#{uri}.json/#{api_key}"
   end
 
-  def get(uri, options = {})
-    store_uri_and_options(uri, options)
+  def get(uri)
+    store_uri(uri)
     @method = :get
 
     self
   end
 
-  def post(uri, options = {})
-    store_uri_and_options(uri, options)
+  def post(uri)
+    store_uri(uri)
     @method = :post
 
     self
   end
 
-  def prepare_uri(uri, options, fields)
-    uri += "/#{api_key}"
+  def params(options)
+    @params = options
+
+    self
+  end
+
+  def restful_params(options, fields)
+    restful_params_string = ''
     fields.each do |field|
-      uri += "/#{options[field]}" if options[field]
+      restful_params_string += "/#{options[field]}" if options[field]
     end
-    uri
+    @uri = "#{@uri}/#{restful_params_string}"
+
+    self
   end
 
   def response
-    self.class.send(@method, uri, request_options(options))
+    self.class.send(@method, @uri, request_options)
   end
 
-  def request_options(options = {})
-    { body: options }.merge(@auth ? auth_hash : {})
+  def request_options
+    { body: @params }.merge(@auth ? auth_hash : {})
   end
 
   def auth_hash
@@ -73,14 +80,14 @@ class TraktApi::Base
   end
 
   def api_key
-    client.api_key
+    @client.api_key
   end
 
   def username
-    client.username
+    @client.username
   end
 
   def password
-    client.password
+    @client.password
   end
 end

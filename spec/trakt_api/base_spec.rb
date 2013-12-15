@@ -23,23 +23,18 @@ describe TraktApi::Base do
     end
   end
 
-  describe '.store_uri_and_options' do
+  describe '.store_uri' do
     it 'should set uri' do
-      model.store_uri_and_options('http://example.com', {})
+      model.stub(:api_key).and_return('API_KEY')
+      model.store_uri('http://example.com')
 
-      model.uri.should == 'http://example.com'
-    end
-
-    it 'should set options' do
-      model.store_uri_and_options('http://example.com', { sample: true })
-
-      model.options.should == { sample: true }
+      model.instance_variable_get('@uri').should == 'http://example.com.json/API_KEY'
     end
   end
 
   describe '.get' do
-    it 'should call store_uri_and_options' do
-      model.should_receive(:store_uri_and_options)
+    it 'should call store_uri' do
+      model.should_receive(:store_uri)
 
       model.get('http://example.com')
     end
@@ -56,8 +51,8 @@ describe TraktApi::Base do
   end
 
   describe '.post' do
-    it 'should call store_uri_and_options' do
-      model.should_receive(:store_uri_and_options)
+    it 'should call store_uri' do
+      model.should_receive(:store_uri)
 
       model.post('http://example.com')
     end
@@ -73,9 +68,21 @@ describe TraktApi::Base do
     end
   end
 
-  describe '.prepare_uri' do
+  describe '.params' do
+    it 'should set @params' do
+      model.params(sample: true)
+
+      model.instance_variable_get('@params').should == { sample: true }
+    end
+  end
+
+  describe '.restful_params' do
     it 'should return correct uri' do
-      model.prepare_uri('URI', {}, []).should == "URI/"
+      model.instance_variable_set('@uri', 'URI')
+
+      model.restful_params({}, [])
+
+      model.instance_variable_get('@uri').should == 'URI/'
     end
   end
 

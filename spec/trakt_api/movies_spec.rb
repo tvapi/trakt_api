@@ -2,24 +2,35 @@ require 'spec_helper'
 
 describe TraktApi::Movies do
   let(:model) { TraktApi::Movies.new(TraktApi::Client.new) }
+  let(:mock_model) { SampleModel.new }
 
   describe '.trending' do
+    it 'should call optional_auth' do
+      model.should_receive(:optional_auth).and_return(mock_model)
+
+      model.trending
+    end
+
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("movies/trending.json/#{TraktApi::Configuration.api_key}").
-        and_return(double(response: true))
+      model.should_receive(:get).with('movies/trending').and_return(mock_model)
 
       model.trending
     end
   end
 
   describe '.updated' do
-    it 'should call get with specific params' do
-      time = Time.now
+    let(:time) { Time.now.to_i }
 
+    it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with("movies/updated.json/#{TraktApi::Configuration.api_key}/#{time.to_i}").
-        and_return(double(response: true))
+      model.should_receive(:get).with('movies/updated').and_return(mock_model)
+
+      model.updated(time: time)
+    end
+
+    it 'should call restful_params' do
+      model.should_receive(:restful_params).and_return(mock_model)
 
       model.updated(time: time)
     end
