@@ -1,11 +1,11 @@
 class TraktApi::Movies < TraktApi::Base
   # documentation: http://trakt.tv/api-docs/movies-trending
   def trending(options = {})
-    optional_auth(options).get('movies/trending').response
+    get('movies/trending').params(options).response
   end
 
   # documentation: http://trakt.tv/api-docs/movies-updated
   def updated(options = {})
-    get('movies/updated').restful_params(options, [:timestamp]).response
+    get('movies/updated').params(options).restful_params([:timestamp]).response
   end
 end

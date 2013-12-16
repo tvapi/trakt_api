@@ -63,6 +63,12 @@ describe TraktApi::Show do
       model.comments
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.comments
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
@@ -74,6 +80,12 @@ describe TraktApi::Show do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('show/episode/comments').and_return(mock_model)
+
+      model.episode_comments
+    end
+
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.episode_comments
     end
@@ -135,6 +147,12 @@ describe TraktApi::Show do
       model.episode_stats
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.episode_stats
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
@@ -143,15 +161,15 @@ describe TraktApi::Show do
   end
 
   describe '.episode_summary' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/episode/summary').and_return(mock_model)
 
       model.episode_summary
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/episode/summary').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.episode_summary
     end
@@ -227,15 +245,15 @@ describe TraktApi::Show do
   end
 
   describe '.episode_watching_now' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/episode/watchingnow').and_return(mock_model)
 
       model.episode_watching_now
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/episode/watchingnow').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.episode_watching_now
     end
@@ -290,15 +308,15 @@ describe TraktApi::Show do
   end
 
   describe '.related' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/related').and_return(mock_model)
 
       model.related
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/related').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.related
     end
@@ -332,15 +350,15 @@ describe TraktApi::Show do
   end
 
   describe '.season' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/season').and_return(mock_model)
 
       model.season
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/season').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.season
     end
@@ -402,6 +420,12 @@ describe TraktApi::Show do
       model.seasons
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.seasons
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
@@ -438,6 +462,12 @@ describe TraktApi::Show do
       model.stats
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.stats
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
@@ -446,15 +476,15 @@ describe TraktApi::Show do
   end
 
   describe '.summary' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/summary').and_return(mock_model)
 
       model.summary
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/summary').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.summary
     end
@@ -545,15 +575,15 @@ describe TraktApi::Show do
   end
 
   describe '.watching_now' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('show/watchingnow').and_return(mock_model)
 
       model.watching_now
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('show/watchingnow').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.watching_now
     end

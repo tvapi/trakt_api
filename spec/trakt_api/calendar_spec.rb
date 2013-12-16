@@ -5,15 +5,15 @@ describe TraktApi::Calendar do
   let(:mock_model) { SampleModel.new }
 
   describe '.settings' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('calendar/premieres').and_return(mock_model)
 
       model.premieres(date: '20130101')
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('calendar/premieres').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.premieres(date: '20130101')
     end
@@ -26,12 +26,6 @@ describe TraktApi::Calendar do
   end
 
   describe '.shows' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
-
-      model.shows(date: '20130101')
-    end
-
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('calendar/shows').and_return(mock_model)
@@ -39,10 +33,16 @@ describe TraktApi::Calendar do
       model.shows(date: '20130101')
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.shows(date: '20130101')
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
-      model.shows(date: '20130101')
+      model.premieres(date: '20130101')
     end
   end
 end

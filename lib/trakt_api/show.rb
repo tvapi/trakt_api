@@ -16,12 +16,12 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-comments
   def comments(options = {})
-    get('show/comments').restful_params(options, [:title, :type]).response
+    get('show/comments').params(options).restful_params([:title, :type]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-episode-comments
   def episode_comments(options = {})
-    get('show/episode/comments').restful_params(options, [:title, :season, :episode, :type]).response
+    get('show/episode/comments').params(options).restful_params([:title, :season, :episode, :type]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-episode-library
@@ -36,12 +36,12 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-episode-stats
   def episode_stats(options = {})
-    get('show/episode/stats').restful_params(options, [:title, :season, :episode]).response
+    get('show/episode/stats').params(options).restful_params([:title, :season, :episode]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-episode-summary
   def episode_summary(options = {})
-    optional_auth(options).get('show/episode/summary').restful_params(options, [:title, :season, :episode]).response
+    get('show/episode/summary').params(options).restful_params([:title, :season, :episode]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-episode-unlibrary
@@ -61,8 +61,7 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-episode-watchingnow
   def episode_watching_now(options = {})
-    optional_auth(options).get('show/episode/watchingnow').restful_params(options, [:title, :season, :episode]).
-      response
+    get('show/episode/watchingnow').params(options).restful_params([:title, :season, :episode]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-episode-watchlist
@@ -77,7 +76,7 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-related
   def related(options = {})
-    optional_auth(options).get('show/related').restful_params(options, [:title, :extended, :hidewatched]).response
+    get('show/related').params(options).restful_params([:title, :extended, :hidewatched]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-scrobble
@@ -87,7 +86,7 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-season
   def season(options = {})
-    optional_auth(options).get('show/season').restful_params(options, [:title, :season]).response
+    get('show/season').params(options).restful_params([:title, :season]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-season-library
@@ -102,7 +101,7 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-seasons
   def seasons(options = {})
-    get('show/seasons').restful_params(options, [:title]).response
+    get('show/seasons').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-seen
@@ -112,12 +111,12 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-stats
   def stats(options = {})
-    get('show/stats').restful_params(options, [:title]).response
+    get('show/stats').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-summary
   def summary(options = {})
-    optional_auth(options).get('show/summary').restful_params(options, [:title, :extended]).response
+    get('show/summary').params(options).restful_params([:title, :extended]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-summaries
@@ -142,7 +141,7 @@ class TraktApi::Show < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/show-watchingnow
   def watching_now(options = {})
-    optional_auth(options).get('show/watchingnow').restful_params(options, [:title]).response
+    get('show/watchingnow').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/show-watchlist

@@ -18,12 +18,6 @@ class TraktApi::Base
     self
   end
 
-  def optional_auth(options)
-    auth if options[:auth]
-
-    self
-  end
-
   def store_uri(uri)
     @uri = "#{uri}.json/#{api_key}"
   end
@@ -44,16 +38,18 @@ class TraktApi::Base
 
   def params(options)
     @params = options
+    auth if options.delete(:auth)
 
     self
   end
 
-  def restful_params(options, fields)
+  def restful_params(fields = [])
     restful_params_string = ''
     fields.each do |field|
-      restful_params_string += "/#{options[field]}" if options[field]
+      value = @params.delete(field)
+      restful_params_string += "/#{value}" if value
     end
-    @uri = "#{@uri}/#{restful_params_string}"
+    @uri = "#{@uri}#{restful_params_string}"
 
     self
   end

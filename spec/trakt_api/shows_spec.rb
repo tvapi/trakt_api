@@ -5,15 +5,15 @@ describe TraktApi::Shows do
   let(:mock_model) { SampleModel.new }
 
   describe '.trending' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('shows/trending').and_return(mock_model)
 
       model.trending
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('shows/trending').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.trending
     end
@@ -25,6 +25,12 @@ describe TraktApi::Shows do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('shows/updated').and_return(mock_model)
+
+      model.updated(time: time)
+    end
+
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.updated(time: time)
     end

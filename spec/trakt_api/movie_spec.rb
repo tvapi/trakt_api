@@ -134,15 +134,15 @@ describe TraktApi::Movie do
   end
 
   describe '.related' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('movie/related').and_return(mock_model)
 
       model.related(title: 'TITLE', hidewatched: 'HIDEWATCH')
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('movie/related').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.related(title: 'TITLE', hidewatched: 'HIDEWATCH')
     end
@@ -162,6 +162,12 @@ describe TraktApi::Movie do
       model.stats(title: 'TITLE')
     end
 
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.stats(title: 'TITLE')
+    end
+
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
@@ -170,15 +176,15 @@ describe TraktApi::Movie do
   end
 
   describe '.summary' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('movie/summary').and_return(mock_model)
 
       model.summary(title: 'TITLE')
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('movie/summary').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.summary(title: 'TITLE')
     end
@@ -194,6 +200,12 @@ describe TraktApi::Movie do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('movie/summaries').and_return(mock_model)
+
+      model.summaries(title: 'TITLE', extended: 'EXTENDED')
+    end
+
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.summaries(title: 'TITLE', extended: 'EXTENDED')
     end
@@ -290,15 +302,15 @@ describe TraktApi::Movie do
   end
 
   describe '.watching_now' do
-    it 'should call optional_auth' do
-      model.should_receive(:optional_auth).and_return(mock_model)
+    it 'should call get with specific params' do
+      model.instance_variable_set("@method", :get)
+      model.should_receive(:get).with('movie/watchingnow').and_return(mock_model)
 
       model.watching_now(title: 'TITLE')
     end
 
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('movie/watchingnow').and_return(mock_model)
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
 
       model.watching_now(title: 'TITLE')
     end

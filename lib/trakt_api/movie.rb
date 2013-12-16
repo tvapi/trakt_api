@@ -36,22 +36,22 @@ class TraktApi::Movie < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/movie-related
   def related(options = {})
-    optional_auth(options).get('movie/related').restful_params(options, [:title, :hidewatched]).response
+    get('movie/related').params(options).restful_params([:title, :hidewatched]).response
   end
 
   # documentation: http://trakt.tv/api-docs/movie-stats
   def stats(options = {})
-    get('movie/stats').restful_params(options, [:title]).response
+    get('movie/stats').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/movie-summary
   def summary(options = {})
-    optional_auth(options).get('movie/summary').restful_params(options, [:title]).response
+    get('movie/summary').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/movie-summaries
   def summaries(options = {})
-    get('movie/summaries').restful_params(options, [:title, :extended]).response
+    get('movie/summaries').params(options).restful_params([:title, :extended]).response
   end
 
   # documentation: http://trakt.tv/api-docs/movie-unlibrary
@@ -76,7 +76,7 @@ class TraktApi::Movie < TraktApi::Base
 
   # documentation: http://trakt.tv/api-docs/movie-watchingnow
   def watching_now(options = {})
-    optional_auth(options).get('movie/watchingnow').restful_params(options, [:title]).response
+    get('movie/watchingnow').params(options).restful_params([:title]).response
   end
 
   # documentation: http://trakt.tv/api-docs/movie-watchlist

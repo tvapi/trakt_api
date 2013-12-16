@@ -15,14 +15,6 @@ describe TraktApi::Base do
     end
   end
 
-  describe '.optionl_auth' do
-    it 'should call auth' do
-      model.should_receive(:auth)
-
-      model.optional_auth(auth: true)
-    end
-  end
-
   describe '.store_uri' do
     it 'should set uri' do
       model.stub(:api_key).and_return('API_KEY')
@@ -70,7 +62,7 @@ describe TraktApi::Base do
 
   describe '.params' do
     it 'should set @params' do
-      model.params(sample: true)
+      model.params(sample: true, auth: true)
 
       model.instance_variable_get('@params').should == { sample: true }
     end
@@ -79,10 +71,11 @@ describe TraktApi::Base do
   describe '.restful_params' do
     it 'should return correct uri' do
       model.instance_variable_set('@uri', 'URI')
+      model.instance_variable_set('@params', { sample: 'test' })
 
-      model.restful_params({}, [])
+      model.restful_params([:sample])
 
-      model.instance_variable_get('@uri').should == 'URI/'
+      model.instance_variable_get('@uri').should == 'URI/test'
     end
   end
 
