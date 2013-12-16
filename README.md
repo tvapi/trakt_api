@@ -2,6 +2,7 @@
 [![Dependency Status](https://gemnasium.com/wafcio/trakt_api.png)](https://gemnasium.com/wafcio/trakt_api)
 [![Code Climate](https://codeclimate.com/github/wafcio/trakt_api.png)](https://codeclimate.com/github/wafcio/trakt_api)
 [![Coverage Status](https://coveralls.io/repos/wafcio/trakt_api/badge.png)](https://coveralls.io/r/wafcio/trakt_api)
+[![Gem Version](https://badge.fury.io/rb/trakt_api.png)](http://badge.fury.io/rb/trakt_api)
 
 # TraktApi
 
