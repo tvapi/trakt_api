@@ -4,18 +4,18 @@ describe TraktApi::Movie do
   let(:model) { TraktApi::Movie.new(TraktApi::Client.new) }
   let(:mock_model) { SampleModel.new }
 
-  describe '.cancel_checkin' do
+  describe '.cancel_check_in' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.cancel_checkin
+      model.cancel_check_in
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
       model.should_receive(:post).with('movie/cancelcheckin').and_return(mock_model)
 
-      model.cancel_checkin
+      model.cancel_check_in
     end
   end
 
@@ -34,24 +34,24 @@ describe TraktApi::Movie do
     end
   end
 
-  describe '.checkin' do
+  describe '.check_in' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.checkin(sample: true)
+      model.check_in(sample: true)
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
       model.should_receive(:post).with('movie/checkin').and_return(mock_model)
 
-      model.checkin(sample: true)
+      model.check_in(sample: true)
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.checkin(sample: true)
+      model.check_in(sample: true)
     end
   end
 

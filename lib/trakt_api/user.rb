@@ -100,17 +100,17 @@ class TraktApi::User < TraktApi::Base
   end
 
   # documentation: http://trakt.tv/api-docs/user-watchlist-episodes
-  def watchlist_episode(options = {})
+  def watch_list_episode(options = {})
     get('user/watchlist/episodes').params(options).restful_params([:username]).response
   end
 
   # documentation: http://trakt.tv/api-docs/user-watchlist-movies
-  def watchlist_movies(options = {})
+  def watch_list_movies(options = {})
     get('user/watchlist/movies').params(options).restful_params([:username]).response
   end
 
   # documentation: http://trakt.tv/api-docs/user-watchlist-shows
-  def watchlist_shows(options = {})
+  def watch_list_shows(options = {})
     get('user/watchlist/shows').params(options).restful_params([:username]).response
   end
 end

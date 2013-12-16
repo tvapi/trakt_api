@@ -1,6 +1,6 @@
 class TraktApi::Show < TraktApi::Base
   # documentation: http://trakt.tv/api-docs/show-cancelcheckin
-  def cancel_checkin
+  def cancel_check_in
     auth.post('show/cancelcheckin').response
   end
 

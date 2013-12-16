@@ -1,6 +1,6 @@
 class TraktApi::Movie < TraktApi::Base
   # documentation: http://trakt.tv/api-docs/movie-cancelcheckin
-  def cancel_checkin
+  def cancel_check_in
     auth.post('movie/cancelcheckin').response
   end
 
@@ -10,7 +10,7 @@ class TraktApi::Movie < TraktApi::Base
   end
 
   # documentation: http://trakt.tv/api-docs/movie-checkin
-  def checkin(options = {})
+  def check_in(options = {})
     auth.post('movie/checkin').params(options).response
   end
 

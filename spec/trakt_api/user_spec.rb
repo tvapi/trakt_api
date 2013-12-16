@@ -424,66 +424,66 @@ describe TraktApi::User do
     end
   end
 
-  describe '.watchlist_episode' do
+  describe '.watch_list_episode' do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('user/watchlist/episodes').and_return(mock_model)
 
-      model.watchlist_episode
+      model.watch_list_episode
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.watchlist_episode
+      model.watch_list_episode
     end
 
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
-      model.watchlist_episode
+      model.watch_list_episode
     end
   end
 
-  describe '.watchlist_movies' do
+  describe '.watch_list_movies' do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('user/watchlist/movies').and_return(mock_model)
 
-      model.watchlist_movies
+      model.watch_list_movies
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.watchlist_movies
+      model.watch_list_movies
     end
 
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
-      model.watchlist_movies
+      model.watch_list_movies
     end
   end
 
-  describe '.watchlist_shows' do
+  describe '.watch_list_shows' do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
       model.should_receive(:get).with('user/watchlist/shows').and_return(mock_model)
 
-      model.watchlist_shows
+      model.watch_list_shows
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.watchlist_shows
+      model.watch_list_shows
     end
 
     it 'should call restful_params' do
       model.should_receive(:restful_params).and_return(mock_model)
 
-      model.watchlist_shows
+      model.watch_list_shows
     end
   end
 end

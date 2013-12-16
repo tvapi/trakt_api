@@ -104,9 +104,9 @@ client.lists.update({...})
 Movie API
 
 ```ruby
-client.movie.cancel_checkin
+client.movie.cancel_check_in
 client.movie.cancel_watching
-client.movie.checkin({...})
+client.movie.check_in({...})
 client.movie.comments({...})
 client.movie.scrobble({...})
 client.movie.library({...})
@@ -177,7 +177,7 @@ client.server.time
 Show API
 
 ```ruby
- client.show.cancel_checkin
+ client.show.cancel_check_in
  client.show.cancel_watching
  client.show.check_in({...})
  client.show.comments({...})
@@ -239,9 +239,9 @@ client.user.ratings_episodes({...})
 client.user.ratings_movies({...})
 client.user.ratings_shows({...})
 client.user.watching({...})
-client.user.watchlist_episode({...})
-client.user.watchlist_movies({...})
-client.user.watchlist_shows({...})
+client.user.watch_list_episode({...})
+client.user.watch_list_movies({...})
+client.user.watch_list_shows({...})
 ```
 
 ## Contributing

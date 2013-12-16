@@ -4,18 +4,18 @@ describe TraktApi::Show do
   let(:model) { TraktApi::Show.new(TraktApi::Client.new) }
   let(:mock_model) { SampleModel.new }
 
-  describe '.cancel_checkin' do
+  describe '.cancel_check_in' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.cancel_checkin
+      model.cancel_check_in
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
       model.should_receive(:post).with('show/cancelcheckin').and_return(mock_model)
 
-      model.cancel_checkin
+      model.cancel_check_in
     end
   end
 
