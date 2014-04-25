@@ -31,7 +31,7 @@ The generator will install an initializer where you must past your api_key, user
 There is one entry point, in initialize you can past hash with api_key, username and password (not sha1) values, or leave empty:
 
 ```ruby
-client = TrakApi::Client.new(api_key: '...', username: '...', password: '...')
+client = TraktApi::Client.new(api_key: '...', username: '...', password: '...')
 ```
 
 ## Usage
