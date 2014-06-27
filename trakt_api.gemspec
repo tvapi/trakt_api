@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'confiture', '>= 0.1.4'
   spec.add_runtime_dependency 'httparty', '>= 0.12.0'
   spec.add_runtime_dependency 'string_to_sha1', '>= 1.0.0'
 

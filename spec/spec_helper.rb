@@ -5,11 +5,6 @@ Coveralls.wear!
 
 require 'trakt_api'
 
-TraktApi::Configuration.configure do |config|
-  config.username = 'tester'
-  config.password = 'qwerty'
-end
-
 class SampleModel
   def auth
     self
