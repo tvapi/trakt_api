@@ -1,105 +1,115 @@
 require 'spec_helper'
 
-describe TraktApi::Network do
-  let(:model) { TraktApi::Network.new(TraktApi::Client.new) }
+describe TraktApi::Lists do
+  let(:model) { TraktApi::Lists.new(TraktApi::Client.new) }
   let(:mock_model) { SampleModel.new }
 
-  describe '.approve' do
+  before do
+    pending 'FIXME'
+  end
+
+  describe '.add' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.approve(user: 'justin', follow_back: true)
+      model.add(name: 'test', privacy: 'private', sample: true)
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
-      model.should_receive(:post).with('network/approve').and_return(mock_model)
+      model.should_receive(:post).with('lists/add').and_return(mock_model)
 
-      model.approve(user: 'justin', follow_back: true)
+      model.add(name: 'test', privacy: 'private', sample: true)
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.approve(user: 'justin', follow_back: true)
+      model.add(name: 'test', privacy: 'private', sample: true)
     end
   end
 
-  describe '.deny' do
+  describe '.delete' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.deny(user: 'justin')
+      model.delete(slug: 'test')
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
-      model.should_receive(:post).with('network/deny').and_return(mock_model)
+      model.should_receive(:post).with('lists/delete').and_return(mock_model)
 
-      model.deny(user: 'justin')
+      model.delete(slug: 'test')
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.deny(user: 'justin')
+      model.delete(slug: 'test')
     end
   end
 
-  describe '.follow' do
+  describe '.items_add' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.follow(user: 'justin')
+      model.items_add(slug: 'test', items: [])
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
-      model.should_receive(:post).with('network/follow').and_return(mock_model)
+      model.should_receive(:post).with('lists/items/add').and_return(mock_model)
 
-      model.follow(user: 'justin')
+      model.items_add(slug: 'test', items: [])
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.follow(user: 'justin')
+      model.items_add(slug: 'test', items: [])
     end
   end
 
-  describe '.requests' do
+  describe '.items_delete' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)
 
-      model.requests
+      model.items_delete(slug: 'test', items: [])
     end
 
     it 'should call post with specific params' do
       model.instance_variable_set("@method", :post)
-      model.should_receive(:post).with('network/requests').and_return(mock_model)
+      model.should_receive(:post).with('lists/items/delete').and_return(mock_model)
 
-      model.requests
-    end
-  end
-
-  describe '.unfollow' do
-    it 'should call auth' do
-      model.should_receive(:auth).and_return(mock_model)
-
-      model.unfollow(user: 'justin')
-    end
-
-    it 'should call post with specific params' do
-      model.instance_variable_set("@method", :post)
-      model.should_receive(:post).with('network/unfollow').and_return(mock_model)
-
-      model.unfollow(user: 'justin')
+      model.items_delete(slug: 'test', items: [])
     end
 
     it 'should call params' do
       model.should_receive(:params).and_return(mock_model)
 
-      model.unfollow(user: 'justin')
+      model.items_delete(slug: 'test', items: [])
+    end
+  end
+
+  describe '.update' do
+    it 'should call auth' do
+      model.should_receive(:auth).and_return(mock_model)
+
+      model.update(slug: 'test', sample: 1)
+    end
+
+    it 'should call post with specific params' do
+      model.instance_variable_set("@method", :post)
+      model.should_receive(:post).with('lists/update').and_return(mock_model)
+
+      model.update(slug: 'test', sample: 1)
+    end
+
+    it 'should call params' do
+      model.should_receive(:params).and_return(mock_model)
+
+      model.update(slug: 'test', sample: 1)
     end
   end
 end

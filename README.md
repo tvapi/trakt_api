@@ -18,14 +18,6 @@ gem 'trakt_api'
 
 Run the bundle command to install it.
 
-After you install ThetvdbApi and add it to your Gemfile, you need to run the generator (if you use Ruby on Rails application):
-
-```console
-rails generate trakt_api:install
-```
-
-The generator will install an initializer where you must past your api_key, username and password (not sha1).
-
 ## How to use
 
 There is one entry point, in initialize you can past hash with api_key, username and password (not sha1) values, or leave empty:
@@ -35,12 +27,6 @@ client = TraktApi::Client.new(api_key: '...', username: '...', password: '...')
 ```
 
 ## Usage
-
-For Authentication this gem use Basic Authentication, so you don't need pass username and password in each api call. If you want active authentication (if authentication is optional) in api call you must pass
-```ruby
-{ auth: true }
-```
-in options
 
 Full documentation is available here: [http://trakt.tv/api-docs](http://trakt.tv/api-docs)
 

@@ -4,6 +4,10 @@ describe TraktApi::Movie do
   let(:model) { TraktApi::Movie.new(TraktApi::Client.new) }
   let(:mock_model) { SampleModel.new }
 
+  before do
+    pending 'FIXME'
+  end
+
   describe '.cancel_check_in' do
     it 'should call auth' do
       model.should_receive(:auth).and_return(mock_model)

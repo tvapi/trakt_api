@@ -1,13 +1,17 @@
 require 'spec_helper'
 
-describe TraktApi::Shows do
-  let(:model) { TraktApi::Shows.new(TraktApi::Client.new) }
+describe TraktApi::Movies do
+  let(:model) { TraktApi::Movies.new(TraktApi::Client.new) }
   let(:mock_model) { SampleModel.new }
+
+  before do
+    pending 'FIXME'
+  end
 
   describe '.trending' do
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('shows/trending').and_return(mock_model)
+      model.should_receive(:get).with('movies/trending').and_return(mock_model)
 
       model.trending
     end
@@ -24,7 +28,7 @@ describe TraktApi::Shows do
 
     it 'should call get with specific params' do
       model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('shows/updated').and_return(mock_model)
+      model.should_receive(:get).with('movies/updated').and_return(mock_model)
 
       model.updated(time: time)
     end
