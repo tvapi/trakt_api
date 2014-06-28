@@ -1,19 +1,30 @@
 require 'spec_helper'
 
 describe TraktApi::Server do
-  let(:model) { TraktApi::Server.new(TraktApi::Client.new) }
-  let(:mock_model) { SampleModel.new }
+  let(:client) { TraktApi::Client.new(api_key: '123456789', adapter: :test, adapter_options: faraday_stubs) }
+  let(:model) { client.server }
 
-  before do
-    pending 'FIXME'
+  let(:data_server_time) { File.read('spec/fixtures/server_time.json') }
+
+  let(:faraday_stubs) do
+    Faraday::Adapter::Test::Stubs.new do |stub|
+      stub.get('/server/time.json/123456789') { [200, { content_type: 'json' }, data_server_time] }
+    end
   end
 
   describe '.time' do
-    it 'should call get with specific params' do
-      model.instance_variable_set("@method", :get)
-      model.should_receive(:get).with('server/time').and_return(mock_model)
+    it 'should return Faraday::Response class' do
+      model.time.class.should == Faraday::Response
+    end
 
-      model.time
+    it 'should return Hash class for body reponse' do
+      model.time.body == Hash
+    end
+  end
+
+  describe '.time_url' do
+    it 'should return correct url' do
+      model.time_url.should == 'http://api.trakt.tv/server/time.json/123456789'
     end
   end
 end

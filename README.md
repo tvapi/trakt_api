@@ -73,8 +73,8 @@ client.comment.show({...})
 Genres API
 
 ```ruby
-client.genres.movies({...})
-client.genres.shows({...})
+client.genres.movies
+client.genres.shows
 ```
 
 Lists API
