@@ -1,0 +1,37 @@
+[
+  {
+    "show":{
+      "title":"Community",
+      "year":2009,
+      "url":"http://trakt.tv/show/community",
+      "first_aired":1253170800,
+      "country":"United States",
+      "overview":"From Emmy Award-winning directors Joe and Anthony Russo (Arrested Development) comes Community, a smart comedy series about higher education -- and lower expectations. The student body at Greendale Community College is made up of high-school losers, newly divorced housewives, and old people who want to keep their minds active. Within these not-so-hallowed halls, Community focuses on a band of misfits, at the center of which is a fast-talkin' lawyer whose degree has been revoked (Joel McHale), who form a study group and end up learning a lot more about themselves than they do about their course work.",
+      "runtime":30,
+      "network":"NBC",
+      "air_day":"Thursday",
+      "air_time":"8:00pm",
+      "certification":"TV-PG",
+      "imdb_id":"tt1439629",
+      "tvdb_id":"94571",
+      "tvrage_id":"22589",
+      "images":{
+        "poster":"http://trakt.us/images/posters/5.jpg",
+        "fanart":"http://trakt.us/images/fanart/5.jpg",
+        "banner":"http://trakt.us/images/banners/5.jpg"
+      },
+      "genres":["Action","Comedy"]
+    },
+    "episode":{
+      "season":1,
+      "episode":23,
+      "title":"Modern Warfare",
+      "overview":"The sexual tension between Jeff and Britta becomes a hot topic among the study group. Meanwhile, what starts out as a simple contest for a chance at early class registration turns the peaceful campus of Greendale Community College into an all-out war zone. Friendships are tested, as only one student can be victorious.",
+      "first_aired":1273129200,
+      "url":"http://trakt.tv/show/community/season/1/episode/23",
+      "images":{
+        "screen":"http://trakt.us/images/episodes/5-1-23.jpg"
+      }
+    }
+  }
+]

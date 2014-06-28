@@ -1,0 +1,14 @@
+[
+  {
+    "username":"justin",
+    "protected":false,
+    "full_name":"Justin",
+    "gender":"male",
+    "age":29,
+    "location":"San Diego, CA",
+    "about":"Co-founder of trakt. Please use the feedback tab on the right side to leave us suggestions or bugs you come across. Hope you're enjoying the site!",
+    "joined":1285436965,
+    "avatar":"http://trakt.us/images/users/1.jpg",
+    "url":"http://trakt.tv/user/justin"
+  }
+]
