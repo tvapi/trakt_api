@@ -18,11 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'service_api', '~> 0.0.4'
+  spec.add_runtime_dependency 'service_api', '~> 0.1.0'
   spec.add_runtime_dependency 'string_to_sha1', '>= 1.0.0'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec', '>= 2.14.1'
+  spec.add_development_dependency 'rspec', '~> 3.1.0'
   spec.add_development_dependency 'coveralls', '>= 0.7'
+  spec.add_development_dependency 'awesome_print', '~> 1.6.0'
 end
