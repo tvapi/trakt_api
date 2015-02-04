@@ -6,4 +6,8 @@ class TraktApi::Client
 
     @config[:adapter] ||= :net_http
   end
+
+  def search(options)
+    @search ||= TraktApi::Search.new(config).run(options)
+  end
 end

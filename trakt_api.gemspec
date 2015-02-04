@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'service_api', '~> 0.1.0'
   spec.add_runtime_dependency 'string_to_sha1', '>= 1.0.0'
+  spec.add_runtime_dependency 'ov', '~> 0.1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
