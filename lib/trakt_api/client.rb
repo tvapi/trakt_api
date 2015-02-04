@@ -8,6 +8,6 @@ class TraktApi::Client
   end
 
   def search(options)
-    @search ||= TraktApi::Search.new(config).run(options)
+    @search ||= TraktApi::Search.new(config).call(options)
   end
 end

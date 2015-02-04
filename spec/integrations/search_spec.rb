@@ -5,7 +5,7 @@ describe TraktApi::Search do
 
   describe '.search' do
     it 'should return response class' do
-      response = model.run(query: 'batman', type: 'show')
+      response = model.call(query: 'batman', type: 'show')
       ap response.body
 
       expect(response).to be_a(Faraday::Response)

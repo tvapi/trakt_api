@@ -1,5 +1,5 @@
 class TraktApi::Search < TraktApi::Base
-  def run(options)
+  def call(options)
     search_path_with_params(options).get
   end
 
