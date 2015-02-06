@@ -1,5 +1,3 @@
-require 'ov'
-
 module TraktApi; end
 
 require 'trakt_api/version'

@@ -1,5 +1,4 @@
 require 'service_api'
-require 'string_to_sha1'
 
 class TraktApi::Base
   include ServiceApi::BaseFaraday
