@@ -9,6 +9,9 @@ describe TraktApi::Shows::Seasons do
       stub.get('/shows/123/seasons') do
         [200, { content_type: 'json' }, File.read('spec/fixtures/seasons.json')]
       end
+      stub.get('/shows/123/seasons/1') do
+        [200, { content_type: 'json' }, File.read('spec/fixtures/episodes.json')]
+      end
     end
   end
 
@@ -25,6 +28,22 @@ describe TraktApi::Shows::Seasons do
   describe '.all_url' do
     it 'should return String class' do
       expect(model.all_url(id: '123')).to eq('https://api.trakt.tv/shows/123/seasons')
+    end
+  end
+
+  describe '.find' do
+    it 'should return Faraday::Response class' do
+      expect(model.find(id: '123', season: 1)).to be_a(Faraday::Response)
+    end
+
+    it 'should return Array class for body reponse' do
+      expect(model.find(id: '123', season: 1).body).to be_a(Array)
+    end
+  end
+
+  describe '.all_url' do
+    it 'should return String class' do
+      expect(model.find_url(id: '123', season: 1)).to eq('https://api.trakt.tv/shows/123/seasons/1')
     end
   end
 

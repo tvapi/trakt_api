@@ -63,6 +63,8 @@ Full documentation is available here: [http://docs.trakt.apiary.io](http://docs.
 * seasons
 * seasons.all
 * seasons.all_url
+* seasons.find
+* seasons.find_url
 * seasons.episodes
 * seasons.episodes.find
 * seasons.episodes.find_url
