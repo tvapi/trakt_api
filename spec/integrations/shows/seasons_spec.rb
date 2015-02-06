@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe TraktApi::Search do
-  let(:model) { TraktApi::Search.new(api_key: API_KEY) }
+describe TraktApi::Shows::Seasons do
+  let(:model) { TraktApi::Shows::Seasons.new(api_key: API_KEY) }
 
   describe '.find' do
     it 'should return response class' do
-      response = model.call(query: 'batman', type: 'show')
+      response = model.all(id: 'game-of-thrones')
       ap response.body
 
       expect(response).to be_a(Faraday::Response)

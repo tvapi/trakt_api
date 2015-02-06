@@ -3,6 +3,10 @@ class TraktApi::Search < TraktApi::Base
     search_path_with_params(options).get
   end
 
+  def call_url(options)
+    search_path_with_params(options).url
+  end
+
   private
 
   def search_path_with_params(options)

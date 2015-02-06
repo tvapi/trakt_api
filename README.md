@@ -35,7 +35,8 @@ Language attribute is optional with default value 'en'
 
 ```ruby
 client = TraktApi::Client.new(api_key: '...')
-client.search({..})
+client.search # => #<TraktApi::Search>
+client.show # => #<TraktApi::Show>
 ```
 
 * II case (direct access to api class, many entry points)
@@ -46,15 +47,25 @@ Language attribute is required
 ThetvdbApi::Search.new(api_key: '...').call({...})
 ```
 
-## Usage
+## Methods
 
 Full documentation is available here: [http://docs.trakt.apiary.io](http://docs.trakt.apiary.io)
 
-Search API
+### Search methods
 
-```ruby
-client.search({...})
-```
+* call
+* call_url
+
+### Show methods
+
+* find
+* find_url
+* seasons
+* seasons.all
+* seasons.all_url
+* seasons.episodes
+* seasons.episodes.find
+* seasons.episodes.find_url
 
 ## Contributing
 

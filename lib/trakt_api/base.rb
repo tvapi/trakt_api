@@ -47,9 +47,9 @@ class TraktApi::Base
 
   def base_url
     if @config[:sandbox]
-      'https://api.staging.trakt.tv'
+      'https://api.staging.trakt.tv/'
     else
-      'https://api.trakt.tv'
+      'https://api.trakt.tv/'
     end
   end
 end
