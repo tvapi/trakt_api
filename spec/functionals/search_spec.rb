@@ -24,7 +24,7 @@ describe TraktApi::Search do
 
   describe '.call_url' do
     it 'should return String class' do
-      expect(model.call_url(query: 'batman', type: 'show')).to eq('https://api.trakt.tv/search?query=batman&type=show')
+      expect(model.call_url(query: 'batman', type: 'show')).to eq('https://api-v2launch.trakt.tv/search?query=batman&type=show')
     end
   end
 end
