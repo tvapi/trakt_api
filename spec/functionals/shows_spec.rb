@@ -24,7 +24,7 @@ describe TraktApi::Shows do
 
   describe '.find_url' do
     it 'should return String class' do
-      expect(model.find_url(id: '123')).to eq('https://api.trakt.tv/shows/123')
+      expect(model.find_url(id: '123')).to eq('https://api-v2launch.trakt.tv/shows/123')
     end
   end
 

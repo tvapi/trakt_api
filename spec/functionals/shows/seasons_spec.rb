@@ -27,7 +27,7 @@ describe TraktApi::Shows::Seasons do
 
   describe '.all_url' do
     it 'should return String class' do
-      expect(model.all_url(id: '123')).to eq('https://api.trakt.tv/shows/123/seasons')
+      expect(model.all_url(id: '123')).to eq('https://api-v2launch.trakt.tv/shows/123/seasons')
     end
   end
 
@@ -43,7 +43,7 @@ describe TraktApi::Shows::Seasons do
 
   describe '.all_url' do
     it 'should return String class' do
-      expect(model.find_url(id: '123', season: 1)).to eq('https://api.trakt.tv/shows/123/seasons/1')
+      expect(model.find_url(id: '123', season: 1)).to eq('https://api-v2launch.trakt.tv/shows/123/seasons/1')
     end
   end
 
